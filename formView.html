@@ -10,13 +10,37 @@
 </head>
 <body>
     <header>
-        <sl-button size="small">Click me</sl-button> 
+        <a href="./mainView.html">
+            <sl-button class="back__button" size="large" variant="text"">
+                <sl-icon slot="prefix" name="arrow-left"></sl-icon>
+                Voltar
+            </sl-button>
+        </a>
+
+        <div class="header__title">
+            <h1>Formulário de inscrição</h1>
+            <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+        </div>
     </header>
     <main>
-        <img src="./style/Ilustration.svg" alt="Illustracao de pessonagem">
+        <h3>Informações do participante</h3>
+        <form class="input-validation-required">
+            <sl-input name="name" label="Nome completo" required></sl-input>
+            <br />
+            <sl-select label="Options" clearable required>
+              <sl-option value="Option1">Birds</sl-option>
+            </sl-select>
+            <br />
+            <sl-textarea name="comment" label="Comment" required></sl-textarea>
+            <br />
+            <sl-checkbox required>Check me before submitting</sl-checkbox>
+            <br /><br />
+            <sl-button type="submit" variant="primary">Submit</sl-button>
+          </form>
     </main>
     <footer>
-        <img src="./style/logo-trilhas-inova.svg" alt="Logo Trilhas Inova">
+        <p>Desenvolvido por <a href="https://github.com/eduardoAssuncao" target="_blank">Eduardo Assunção</a> e <a href="https://github.com/criador2" target="_blank">Elias Mendes</a>.</p>
+        <p>&copy; 2025 Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
