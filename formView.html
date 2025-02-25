@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./formViewStyle.css">
+    <link rel="stylesheet" href="./style/formViewStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"></script>
     <title>Formulário</title>
@@ -23,24 +23,115 @@
         </div>
     </header>
     <main>
-        <h3>Informações do participante</h3>
         <form class="input-validation-required">
-            <sl-input name="name" label="Nome completo" required></sl-input>
+            <div>
+                <h3>Informações do participante</h3>
+                <sl-input placeholder="Nome" label="Nome completo" required></sl-input>
+                <br />
+                <sl-input type="date" placeholder="Data" label="Data de nascimento" required></sl-input>
+                <br />
+                <!--TODO: Adicionar mascara de CPF-->
+                <sl-input placeholder="Cpf" label="CPF" required></sl-input>
+                <br />
+                <sl-select label="Sexo" value="Feminino" clearable required>
+                    <sl-option value="Feminino">Feminino</sl-option>
+                    <sl-option value="Masculino">Masculino</sl-option>
+                </sl-select>
+                <br />
+                <sl-input placeholder="Email" label="E-mail" required></sl-input>
+                <br />
+                <!-- TODO: Adicionar mascara de telefone -->
+                <sl-input placeholder="Telefone" label="Telefone" required></sl-input>
+                <br />
+                <div class="custom-file-upload">
+                    <label class="upload-label">Documentos de identidade *</label>
+                
+                    <input type="file" id="fileInput" accept=".pdf" required />
+                
+                    <label for="fileInput" class="upload-area">
+                        <img src="./style/cloud-upload.svg" alt="Ícone de upload" />
+                        <span>Clique aqui para selecionar o arquivo</span>
+                    </label>
+                </div>
+            </div>
             <br />
-            <sl-select label="Options" clearable required>
-              <sl-option value="Option1">Birds</sl-option>
-            </sl-select>
+            <div>
+                <h3>Endereço residencial</h3>
+                <sl-input placeholder="Cep" label="CEP" required></sl-input>
+                <br />
+                <!-- TODO?: Fazer requisicao para Consulta de Cep e preenchimento de informacoes? -->
+                <div>
+                    <sl-input placeholder="Rua" label="Data de nascimento" required filled></sl-input>
+                    <sl-input placeholder="Número" label="Número" required></sl-input>
+                </div>
+                <br />
+                <div>
+                    <sl-input placeholder="Cidade" label="Cidade" required filled></sl-input>
+                    <sl-input placeholder="Estado" label="Estado" required filled></sl-input>
+                </div>
+                <br />
+                <div class="custom-file-upload">
+                    <label class="upload-label">Comprovante de residência *</label>
+                
+                    <input type="file" id="fileInput" accept=".pdf" required />
+                
+                    <label for="fileInput" class="upload-area">
+                        <img src="./style/cloud-upload.svg" alt="Ícone de upload" />
+                        <span>Clique aqui para selecionar o arquivo</span>
+                    </label>
+                </div>
+            </div>
             <br />
-            <sl-textarea name="comment" label="Comment" required></sl-textarea>
-            <br />
-            <sl-checkbox required>Check me before submitting</sl-checkbox>
+            <div>
+                <h3>Trilhas de aprendizagem</h3>
+                <div class="select-trilha">
+                    <!-- <label class="select-trilha-label">Selecione apenas uma trilha *</label> -->
+                    
+                    <sl-radio-group label="Selecione apenas uma trilha *" name="a" value="1">
+                        <sl-radio value="1">
+                            <label for="fileInput" class="upload-area">
+                                <img src="./style/icon-front.svg" alt="Ícone de upload" />
+                                <span>Programação Front-end</span>
+                            </label>
+                        </sl-radio>
+                        <sl-radio value="2">
+                            <label for="fileInput" class="upload-area">
+                                <img src="./style/icon-back.svg" alt="Ícone de upload" />
+                                <span>Programação Back-end</span>
+                            </label>
+                        </sl-radio>
+                        <sl-radio value="3">
+                            <label for="fileInput" class="upload-area">
+                                <img src="./style/icon-jogos.svg" alt="Ícone de upload" />
+                                <span>Programação de Jogos</span>
+                            </label>
+                        </sl-radio>
+                        <sl-radio value="4">
+                            <label for="fileInput" class="upload-area">
+                                <img src="./style/icon-ux.svg" alt="Ícone de upload" />
+                                <span>Design e Experiência</span>
+                            </label>
+                        </sl-radio>
+                        <sl-radio value="5">
+                            <label for="fileInput" class="upload-area">
+                                <img src="./style/icon-dados.svg" alt="Ícone de upload" />
+                                <span>Ciência de Dados</span>
+                            </label>
+                        </sl-radio>
+                      </sl-radio-group>
+                    
+                </div>
+            </div>
+            <br /> 
+            <sl-checkbox required>Declaro que li e concordo com os <a href="https://" target="_blank">Termos e Condições</a> e com a <a href="https://" target="_blank">Política de Privacidade.</a></sl-checkbox>
             <br /><br />
-            <sl-button type="submit" variant="primary">Submit</sl-button>
+            <div>
+                <a href="./mainView.html">
+                    <sl-button>Cancelar</sl-button>
+                </a>
+                <sl-button type="submit" variant="primary">Fazer Inscrição</sl-button>
+            </div>
           </form>
     </main>
-    <footer>
-        <p>Desenvolvido por <a href="https://github.com/eduardoAssuncao" target="_blank">Eduardo Assunção</a> e <a href="https://github.com/criador2" target="_blank">Elias Mendes</a>.</p>
-        <p>&copy; 2025 Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
