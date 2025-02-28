@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,6 @@
                 <br />
                 <sl-input type="date" placeholder="Data" label="Data de nascimento" required></sl-input>
                 <br />
-                <!--TODO: Adicionar mascara de CPF-->
                 <sl-input placeholder="Cpf" label="CPF" required></sl-input>
                 <br />
                 <sl-select label="Sexo" value="Feminino" clearable required>
@@ -40,14 +39,13 @@
                 <br />
                 <sl-input placeholder="Email" label="E-mail" required></sl-input>
                 <br />
-                <!-- TODO: Adicionar mascara de telefone -->
                 <sl-input placeholder="Telefone" label="Telefone" required></sl-input>
                 <br />
                 <div class="custom-file-upload">
                     <label class="upload-label">Documentos de identidade *</label>
-                
+
                     <input type="file" id="fileInput" accept=".pdf" required />
-                
+
                     <label for="fileInput" class="upload-area">
                         <img src="./style/cloud-upload.svg" alt="Ícone de upload" />
                         <span>Clique aqui para selecionar o arquivo</span>
@@ -59,7 +57,6 @@
                 <h3>Endereço residencial</h3>
                 <sl-input placeholder="Cep" label="CEP" required></sl-input>
                 <br />
-                <!-- TODO?: Fazer requisicao para Consulta de Cep e preenchimento de informacoes? -->
                 <div>
                     <sl-input placeholder="Rua" label="Data de nascimento" required filled></sl-input>
                     <sl-input placeholder="Número" label="Número" required></sl-input>
@@ -72,9 +69,9 @@
                 <br />
                 <div class="custom-file-upload">
                     <label class="upload-label">Comprovante de residência *</label>
-                
+
                     <input type="file" id="fileInput" accept=".pdf" required />
-                
+
                     <label for="fileInput" class="upload-area">
                         <img src="./style/cloud-upload.svg" alt="Ícone de upload" />
                         <span>Clique aqui para selecionar o arquivo</span>
@@ -86,7 +83,7 @@
                 <h3>Trilhas de aprendizagem</h3>
                 <div class="select-trilha">
                     <!-- <label class="select-trilha-label">Selecione apenas uma trilha *</label> -->
-                    
+
                     <sl-radio-group label="Selecione apenas uma trilha *" name="a" value="1">
                         <sl-radio value="1">
                             <label for="fileInput" class="upload-area">
@@ -119,10 +116,10 @@
                             </label>
                         </sl-radio>
                       </sl-radio-group>
-                    
+
                 </div>
             </div>
-            <br /> 
+            <br />
             <sl-checkbox required>Declaro que li e concordo com os <a href="https://" target="_blank">Termos e Condições</a> e com a <a href="https://" target="_blank">Política de Privacidade.</a></sl-checkbox>
             <br /><br />
             <div>
@@ -133,5 +130,6 @@
             </div>
           </form>
     </main>
+    <script src="./scripts/formView.js"></script>
 </body>
 </html>
